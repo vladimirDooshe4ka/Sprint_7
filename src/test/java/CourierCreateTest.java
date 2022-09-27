@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertTrue;
 
 
-public class CreateCourierTest {
+public class CourierCreateTest {
 
     Courier courier;
     CourierClient courierClient;

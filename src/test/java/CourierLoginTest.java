@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Test;
 import courier.*;
 
-public class LoginCourierTest {
+public class CourierLoginTest {
     Courier courier;
     CourierClient courierClient;
     CourierCredentials courierCredentials;
@@ -96,7 +96,7 @@ public class LoginCourierTest {
     @DisplayName("Тест авторизации при передачи невалидных логина и пароля")
     public void testLoginNonexistentCourierFailure() {
 
-        courierCredentials = CourierCredentials.getCredentialsNonexistentCourier(courier);
+        courierCredentials = CourierCredentials.getCredentialsWithWrongPassAndLog(courier);
         String message = courierClient.loginCourier(courierCredentials)
                 .statusCode(404)
                 .extract().path("message");
