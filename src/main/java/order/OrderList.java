@@ -5,7 +5,6 @@ import lombok.Data;
 
 @Data
 public class OrderList {
-
     private Integer courierId;
     private String nearestStation;
     private Integer limit;

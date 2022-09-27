@@ -1,12 +1,11 @@
-
 import org.junit.Before;
 import org.junit.After;
 import org.junit.Test;
 import io.qameta.allure.junit4.DisplayName;
 import courier.*;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertTrue;
-
 
 public class CourierCreateTest {
 
@@ -22,7 +21,7 @@ public class CourierCreateTest {
 
     @After
     public void tearDown() {
-        if (createSuccess){
+        if (createSuccess) {
             CourierCredentials courierCredentials = CourierCredentials.getCredentials(courier);
             int courierId = courierClient.loginCourier(courierCredentials).extract().path("id");
             courierClient.deleteCourier(courierId).statusCode(200);

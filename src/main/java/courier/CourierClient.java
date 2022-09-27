@@ -1,8 +1,8 @@
 package courier;
+
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import order.BaseClient;
-
 
 public class CourierClient extends BaseClient {
     private final String ROOT = "/courier";
@@ -11,7 +11,6 @@ public class CourierClient extends BaseClient {
 
     @Step("Создание курьера")
     public ValidatableResponse createCourier(Courier courier) {
-
         return getSpec()
                 .body(courier)
                 .when()
@@ -21,7 +20,7 @@ public class CourierClient extends BaseClient {
     }
 
     @Step("Удаление курьера")
-    public ValidatableResponse deleteCourier(int courierId){
+    public ValidatableResponse deleteCourier(int courierId) {
         return getSpec()
                 .pathParam("id", courierId)
                 .when()
@@ -31,8 +30,7 @@ public class CourierClient extends BaseClient {
     }
 
     @Step("Авторизация курьера")
-    public ValidatableResponse loginCourier(CourierCredentials courierCredentials){
-
+    public ValidatableResponse loginCourier(CourierCredentials courierCredentials) {
         return getSpec()
                 .body(courierCredentials)
                 .when()
@@ -40,6 +38,4 @@ public class CourierClient extends BaseClient {
                 .then().log().all()
                 .assertThat();
     }
-
-
 }

@@ -1,4 +1,5 @@
 package courier;
+
 import io.qameta.allure.Step;
 import lombok.Data;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -14,7 +15,7 @@ public class CourierCredentials {
     }
 
     @Step("Формирование данных для авторизации курьера")
-    public static CourierCredentials getCredentials(Courier courier){
+    public static CourierCredentials getCredentials(Courier courier) {
         return new CourierCredentials(
                 courier.getLogin(),
                 courier.getPassword()

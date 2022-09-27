@@ -1,4 +1,5 @@
 package courier;
+
 import io.qameta.allure.Step;
 import org.apache.commons.lang3.RandomStringUtils;
 import lombok.Data;
@@ -33,16 +34,16 @@ public class Courier {
         this.firstName = firstName;
     }
 
-
     public Courier(String login, String password, String firstName) {
         this.login = login;
         this.password = password;
         this.firstName = firstName;
     }
+
     @Step("Формирование данных для создания курьера со всеми полями")
     public static Courier getRandomCourier() {
         return new Courier(
-                RandomStringUtils.randomAlphanumeric(10)+"@example.com",
+                RandomStringUtils.randomAlphanumeric(10) + "@example.com",
                 RandomStringUtils.randomAlphabetic(10),
                 RandomStringUtils.randomAlphabetic(8)
         );
@@ -51,7 +52,7 @@ public class Courier {
     @Step("Формирование данных для создания курьера с обязательными полями")
     public static Courier getCourierWithRequiredFields() {
         return new Courier(
-                RandomStringUtils.randomAlphanumeric(10)+"@example.com",
+                RandomStringUtils.randomAlphanumeric(10) + "@example.com",
                 RandomStringUtils.randomAlphabetic(10),
                 null
         );
@@ -69,7 +70,7 @@ public class Courier {
     @Step("Формирование данных для создания курьера без пароля")
     public static Courier getCourierWithoutPassword() {
         return new Courier(
-                RandomStringUtils.randomAlphanumeric(10)+"@example.com",
+                RandomStringUtils.randomAlphanumeric(10) + "@example.com",
                 null,
                 RandomStringUtils.randomAlphabetic(8)
         );

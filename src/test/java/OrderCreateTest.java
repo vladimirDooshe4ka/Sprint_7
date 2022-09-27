@@ -10,7 +10,6 @@ import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-
 @RunWith(Parameterized.class)
 public class OrderCreateTest {
     Order order;
@@ -21,7 +20,7 @@ public class OrderCreateTest {
         this.colorScooter = colorScooter;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0}")
     public static Object[] getOrderData() {
         return new Object[][]{
                 {new String[]{"BLACK"}},

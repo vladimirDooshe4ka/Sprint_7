@@ -7,7 +7,6 @@ import order.OrderClient;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 public class OrderListTest {
-
     OrderList orderList;
     OrderClient orderClient;
 
